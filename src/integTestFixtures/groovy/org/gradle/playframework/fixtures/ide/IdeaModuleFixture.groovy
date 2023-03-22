@@ -5,6 +5,8 @@ import groovy.util.slurpersupport.GPathResult
 import org.gradle.internal.Transformers
 import org.gradle.util.CollectionUtils
 
+//import org.gradle.util.CollectionUtils
+
 class IdeaModuleFixture extends IdeProjectFixture {
     private final GPathResult iml
     private final File file

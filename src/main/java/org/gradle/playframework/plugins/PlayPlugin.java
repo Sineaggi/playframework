@@ -30,7 +30,7 @@ public class PlayPlugin implements Plugin<Project> {
 
         project.getTasks().named(PlayApplicationPlugin.ASSETS_JAR_TASK_NAME, Jar.class, task -> {
             task.dependsOn(javaScriptMinifyTask);
-            task.from(javaScriptMinifyTask.get().getDestinationDir(), copySpec -> copySpec.into("public"));
+            task.from(javaScriptMinifyTask.map(JavaScriptMinify::getDestinationDir), copySpec -> copySpec.into("public"));
         });
     }
 }
